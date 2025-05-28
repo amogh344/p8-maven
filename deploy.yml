@@ -1,0 +1,9 @@
+---
+- name: Deploy JAR from Jenkins
+  hosts: local
+  become: yes
+  tasks:
+    - name: Copy JAR to /opt
+      copy:
+        src: /var/lib/jenkins/workspace/p8-pipeline/target/p8-maven-1.0-SNAPSHOT.jar
+        dest: /opt/p8-app.jar
